@@ -41,7 +41,7 @@ function AdminNavBar() {
             <div className="flex h-full flex-col justify-between">
               <div>
                 <Sidebar.Items>
-                  <div className="text-xl ml-8">
+                  <div className="text-xl ml-6">
                     <div className="flex items-center mb-0 mt-0 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goHome}>
                       Home
                     </div>
@@ -80,7 +80,12 @@ function AdminNavBar() {
         </Drawer.Items>
       </Drawer>
 
-      <Navbar fluid rounded style={{ backgroundColor: '#F8EC98' }}>
+      <Navbar fluid rounded style={{
+        backgroundColor: '#F8EC98',
+        position: 'sticky',
+        top: 0,
+        boxShadow: '0px 2px 3px rgba(0, 0, 0, 0.1)',
+      }}>
         <Navbar.Brand style={{ marginTop: "10px", marginBottom: "10px" }}>
           <Tooltip content="Menu" placement="bottom" className="text-xs">
             <IoMenu className="mr-3 ml-3 h-6 w-6" style={{ cursor: "pointer" }} onClick={() => setIsOpen(true)} />
