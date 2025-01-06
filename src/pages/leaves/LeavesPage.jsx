@@ -1,48 +1,43 @@
 "use client";
 import React from "react";
-import { Select, FileInput, Datepicker } from "flowbite-react";
 import { Table } from "flowbite-react";
+import { Button, Label, Select, FileInput, Datepicker } from "flowbite-react";
 
 export const LeavesPage = () => {
     return (
         <div>
-            <div className="flex items-center justify-center min-h-screen bg-gray-100">
-                <form className="w-full max-w-lg flex flex-col gap-6 bg-white p-8 rounded shadow-lg">
-                    <p className="mb-3 mt-0 text-lg font-bold">Apply Your Leave</p>
+            <div className="flex items-center justify-center">
+                <form className="w-full max-w-lg flex flex-col gap-6 bg-white p-8 rounded-lg mt-10">
+                    <p className="mb-2 mt-0 text-lg font-bold">Apply Your Leave</p>
                     <div>
-                        <label htmlFor="email1" className="mb-2 block text-md font-medium">
-                            Start Date
-                        </label>
+                        <div className="mb-2 block">
+                            <Label htmlFor="startdate" value="Enter leave start date" />
+                        </div>
                         <Datepicker />
                     </div>
                     <div>
-                        <label htmlFor="email1" className="mb-2 block text-md font-medium">
-                            End Date
-                        </label>
+                        <div className="mb-2 block">
+                            <Label htmlFor="enddate" value="Enter leave end date" />
+                        </div>
                         <Datepicker />
                     </div>
                     <div>
-                        <label htmlFor="leaveType" className="mb-2 block text-md font-medium">
-                            Leave Type
-                        </label>
-                        <Select id="leaveType" required className="w-full rounded border-gray-300">
+                        <div className="mb-2 block">
+                            <Label htmlFor="leavetype" value="Select Leave Type" />
+                        </div>
+                        <Select id="leavetypes" required>
                             <option>Casual</option>
                             <option>Sick</option>
-                            <option>Annual</option>
+                            <option>Vacation</option>
                         </Select>
                     </div>
                     <div>
-                        <label htmlFor="file-upload" className="mb-2 block text-md font-medium">
-                            Upload Leave Form
-                        </label>
-                        <FileInput id="file-upload" className="w-full" />
+                        <div className="mb-2 block">
+                            <Label htmlFor="leaveform" value="Upload Leave Form" />
+                        </div>
+                        <FileInput id="file-upload" />
                     </div>
-                    <button
-                        type="submit"
-                        className="rounded bg-blue-600 px-5 py-3 text-md font-semibold text-white hover:bg-blue-700 mt-6"
-                    >
-                        Submit
-                    </button>
+                    <Button type="submit" className="mt-4">Submit</Button>
                 </form>
             </div>
 

@@ -20,6 +20,31 @@ function CommonNavBar() {
     handleClose();
   }
 
+  const goToAttendance = () => {
+    navigate('/attendance');
+    handleClose();
+  }
+
+  const goToLeaves = () => {
+    navigate('/leave');
+    handleClose();
+  }
+
+  const goToSalarySlips = () => {
+    navigate('/payroll');
+    handleClose();
+  }
+
+  const goToShiftSchedule = () => {
+    navigate('/schedule');
+    handleClose();
+  }
+
+  const goToTraining = () => {
+    navigate('/training');
+    handleClose();
+  }
+
   const goToProfileOrSignIn = () => {
     const token = localStorage.getItem("authToken");
     console.log("CommonNavBar ", token);
@@ -45,19 +70,19 @@ function CommonNavBar() {
                     <div className="flex items-center mb-0 mt-0 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goHome}>
                       Home
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" >
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goToAttendance}>
                       Attendance
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" >
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goToLeaves}>
                       Leaves
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goToSalarySlips}>
                       Salary Slips
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" >
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goToShiftSchedule}>
                       Shift Schedule
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goToTraining}>
                       Trainings
                     </div>
                   </div>

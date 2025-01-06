@@ -16,7 +16,22 @@ function AdminNavBar() {
   const handleClose = () => setIsOpen(false);
 
   const goHome = () => {
-    navigate('/');
+    navigate('/admin');
+    handleClose();
+  }
+
+  const goToLeaves = () => {
+    navigate('/admin/leave');
+    handleClose();
+  }
+
+  const goToNotifications = () => {
+    navigate('/admin/notification');
+    handleClose();
+  }
+
+  const goToRoles = () => {
+    navigate('/admin/role');
     handleClose();
   }
 
@@ -45,31 +60,31 @@ function AdminNavBar() {
                     <div className="flex items-center mb-0 mt-0 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goHome}>
                       Home
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" >
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" >
                       Attendance
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" >
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goToLeaves}>
                       Leaves
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goToNotifications}>
                       Notifications
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" >
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" >
                       Payroll
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200" onClick={goToRoles}>
                       Roles
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
                       Shifts
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
                       Shift Schedules
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
                       Trainings
                     </div>
-                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
+                    <div className="flex items-center my-4 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200 cursor-pointer rounded-md px-4 py-2 transition duration-300 hover:bg-yellow-200">
                       Recruitment
                     </div>
                   </div>

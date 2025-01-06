@@ -4,7 +4,7 @@ import { Card } from "flowbite-react";
 export const HomePage = () => {
     return (
         <div>
-            <div className="flex flex-wrap justify-center gap-16 mt-5">
+            <div className="flex flex-wrap justify-center gap-16 mt-10">
                 <Card className="w-80 flex flex-col items-center">
                     <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white ml-[-60px]">
                         2024 - 01 - 15
