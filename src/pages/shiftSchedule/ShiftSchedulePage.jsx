@@ -4,8 +4,8 @@ import { Table } from "flowbite-react";
 export const ShiftSchedulePage = () => {
     return (
         <div>
-            <div className="overflow-x-auto mx-10">
-                <p className="mb-10 mt-5 text-lg font-bold">Shift Schedules</p>
+            <div className="overflow-x-auto sm:mx-32 mx-10">
+                <p className="mb-10 mt-5 text-md font-bold">Shift Schedules</p>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>Date</Table.HeadCell>

@@ -8,7 +8,7 @@ export const LeavesPage = () => {
         <div>
             <div className="flex items-center justify-center">
                 <form className="w-full max-w-lg flex flex-col gap-6 bg-white p-8 rounded-lg mt-10">
-                    <p className="mb-2 mt-0 text-lg font-bold">Apply Your Leave</p>
+                    <p className="mb-2 mt-0 text-md font-bold">Apply Your Leave</p>
                     <div>
                         <div className="mb-2 block">
                             <Label htmlFor="startdate" value="Enter leave start date" />
@@ -17,7 +17,7 @@ export const LeavesPage = () => {
                     </div>
                     <div>
                         <div className="mb-2 block">
-                            <Label htmlFor="enddate" value="Enter leave end date" />
+                            <Label htmlFor="enddate" value="Enter leave end date"/>
                         </div>
                         <Datepicker />
                     </div>
@@ -37,12 +37,12 @@ export const LeavesPage = () => {
                         </div>
                         <FileInput id="file-upload" />
                     </div>
-                    <Button type="submit" className="mt-4">Submit</Button>
+                    <Button type="submit" className="mt-4 text-white">Submit</Button>
                 </form>
             </div>
 
             <div className="overflow-x-auto mx-10 mt-10 mb-20">
-                <p className="mb-10 mt-5 text-lg font-bold">Recent Leave Applications</p>
+                <p className="mb-10 mt-5 text-md font-bold">Recent Leave Applications</p>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>Applied On</Table.HeadCell>

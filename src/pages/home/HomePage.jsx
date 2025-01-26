@@ -1,97 +1,61 @@
 import React from "react";
 import { Card } from "flowbite-react";
+import { Button, Label, Select, Datepicker } from "flowbite-react";
 
 export const HomePage = () => {
     return (
-        <div>
-            <div className="flex flex-wrap justify-center gap-16 mt-10">
-                <Card className="w-80 flex flex-col items-center">
-                    <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white ml-[-60px]">
-                        2024 - 01 - 15
-                    </h5>
-                    <div className="flex justify-center items-center my-5">
-                        <button
-                            className="text-xl w-32 h-32 bg-yellow-300 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-200 focus:outline-none"
-                        >
-                            Check in
-                        </button>
+        <div className="flex flex-wrap justify-center gap-32">
+            <div className="flex items-center mx-2">
+                <form className="w-[400px] max-w-lg flex flex-col gap-6 bg-white p-8 rounded-lg mt-10 ">
+                    <p className="mb-2 mt-0 text-md font-bold">Mark Your Attendance</p>
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="attendanceDate" value="Select the date" />
+                        </div>
+                        <Datepicker />
                     </div>
-                    <h5 className="text-lg tracking-tight text-gray-900 dark:text-white">
-                        Check In: 08:00 AM
-                    </h5>
-                </Card>
-
-                <Card className="w-80 flex flex-col items-center">
-                    <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white ml-[-60px]">
-                        2024 - 01 - 15
-                    </h5>
-                    <div className="flex justify-center items-center my-5">
-                        <button
-                            className="text-xl w-32 h-32 bg-yellow-300 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-200 focus:outline-none"
-                        >
-                            Check Out
-                        </button>
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="starttime" value="Select start time" />
+                        </div>
+                        <Select id="starttime" required>
+                            <option>08.00 AM</option>
+                            <option>09.00 AM</option>
+                            <option>10.00 AM</option>
+                            <option>11.00 AM</option>
+                        </Select>
                     </div>
-                    <h5 className="text-lg tracking-tight text-gray-900 dark:text-white">
-                        Check Out: 04:00 PM
-                    </h5>
-                </Card>
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="endtime" value="Select end time" />
+                        </div>
+                        <Select id="endtime" required>
+                            <option>08.00 AM</option>
+                            <option>09.00 AM</option>
+                            <option>10.00 AM</option>
+                            <option>11.00 AM</option>
+                        </Select>
+                    </div>
+                    <Button type="submit" className="mt-4 text-white">Submit</Button>
+                </form>
             </div>
 
 
-            <div className="flex flex-wrap justify-center gap-16 mt-16">
-                <Card className="w-[450px] flex flex-col items-center">
-                    <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white ml-[-110px]">
-                        Last 7 Days Attendance
-                    </h5>
-                    <div className="flex justify-center items-center my-5">
-                        There will be a graph here
-                    </div>
-                </Card>
-
-                <Card className="w-[450px] flex flex-col items-center">
-                    <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white ml-[-110px]">
-                        Remaining Leaves for 2025
-                    </h5>
-                    <div className="flex justify-center items-center my-5">
-                        There Will be a graph here
-                    </div>
-                </Card>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-16 mt-16 mb-10">
-                <Card className="w-80 flex flex-col items-center">
-                    <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white ml-[-40px]">
+            <div className="flex items-center justify-center mx-2">
+                <form className="w-[400px] max-w-lg flex flex-col gap-6 p-0 rounded-lg mb-10 bg-white text-gray-500 text-sm pl-4 pt-4 ">
+                    <p className="mt-2 text-md">
                         Your Shift Tomorrow
-                    </h5>
-                    <div className="flex justify-center items-center my-5 flex flex-col">
-                        <p>Villagio</p>
-                        <p>08.00 AM to 04.00 PM</p>
-                    </div>
-                </Card>
-
-                <Card className="w-80 flex flex-col items-center">
-                    <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white ml-[-40px]">
-                        Your Next Event
-                    </h5>
-                    <div className="flex justify-center items-center my-5 flex flex-col">
-                        <p>Hotel Regis</p>
-                        <p>2024 - 01 - 15</p>
-                        <p>06.00 PM to 09.00 PM</p>
-                    </div>
-                </Card>
-
-                <Card className="w-80 flex flex-col items-center">
-                    <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white ml-[-40px]">
-                        Your Next Training
-                    </h5>
-                    <div className="flex justify-center items-center my-5 flex flex-col">
-                        <p>Al Wakra Branch</p>
-                        <p>9.00 AM to 11.00 PM</p>
-                        <p>Barista Training</p>
-                        <p>Trainer - Ver</p>
-                    </div>
-                </Card>
+                        <li className="ml-5 mt-2">08.00 AM - 04.00 PM at Villagio Mall</li>
+                    </p>
+                    <p className="mb-2 mt-2 text-md">
+                        Your next Event
+                        <li className="ml-5 mt-2">2024-02-15: 06.00 PM at Hotel Regis</li>
+                    </p>
+                    <p className="mb-2 mt-2 text-md">
+                        Your next Training
+                        <li className="ml-5 mt-2">2024-02-15: 11.00 AM at Mashaf Branch</li>
+                    </p>
+                </form>
             </div>
         </div>
     );

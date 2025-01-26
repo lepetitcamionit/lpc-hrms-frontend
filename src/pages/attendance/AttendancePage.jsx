@@ -5,7 +5,7 @@ export const AttendancePage = () => {
     return (
         <div>
             <div className="overflow-x-auto mx-10">
-                <p className="mb-10 mt-5 text-lg font-bold">Attendance</p>
+                <p className="mb-10 mt-5 text-md font-bold">Attendance</p>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>Date</Table.HeadCell>

@@ -26,7 +26,7 @@ export const AdminRolePage = () => {
             </div>
 
             <div className="overflow-x-auto mx-10 mt-10 mb-20">
-                <p className="mb-10 mt-5 text-lg font-bold">All Roles</p>
+                <p className="mb-10 mt-5 text-md font-bold">All Roles</p>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>Role name</Table.HeadCell>

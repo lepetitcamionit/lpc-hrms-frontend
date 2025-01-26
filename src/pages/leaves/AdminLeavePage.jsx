@@ -6,7 +6,7 @@ export const AdminLeavePage = () => {
     return (
         <div>
             <div className="overflow-x-auto mx-10">
-                <p className="mb-10 mt-5 text-lg font-bold">Leave Management</p>
+                <p className="mb-10 mt-5 text-md font-bold">Leave Management</p>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>Applied Date</Table.HeadCell>

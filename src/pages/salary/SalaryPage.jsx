@@ -4,8 +4,8 @@ import { Table } from "flowbite-react";
 export const SalaryPage = () => {
     return (
         <div>
-            <div className="overflow-x-auto mx-48">
-                <p className="mb-10 mt-5 text-lg font-bold">Salary Slips</p>
+            <div className="overflow-x-auto sm:mx-48 mx-10">
+                <p className="mb-10 mt-5 text-md font-bold">Salary Slips</p>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>Salary Slip</Table.HeadCell>
