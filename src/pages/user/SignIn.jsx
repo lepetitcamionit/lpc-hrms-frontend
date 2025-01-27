@@ -40,10 +40,10 @@ export const SignIn = () => {
 
                 const role = res02.roleId;
 
-                if (role == "staff") {
-                    navigate('/');
-                }else {
+                if (role == "owner") {
                     navigate('/admin');
+                }else {
+                    navigate('/');
                 }
             // }
 

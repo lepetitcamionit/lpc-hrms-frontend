@@ -1,16 +1,16 @@
 import apiInstance from "./apiInstance";
 
-const getUserById = async (id, token) => {
-  if (!token) {
-    throw new Error("User is not authenticated. Please log in.");
-  }
+const getUserById = async (id) => {
+  // if (!token) {
+  //   throw new Error("User is not authenticated. Please log in.");
+  // }
 
   try {
     const response = await apiInstance.get(`/user/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      withCredentials: true,
+      // headers: {
+      //   Authorization: `Bearer ${token}`,
+      // },
+      // withCredentials: true,
     });
     return response.data;
   } catch (error) {
