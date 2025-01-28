@@ -3,10 +3,12 @@ import { Button, Label, TextInput } from "flowbite-react";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../../AuthProvider";
 import roleApi from "../../api/role.request";
+import { useNavBar } from "../../NavBarContext";
 
 export const SignIn = () => {
     const navigate = useNavigate();
     const { login } = useAuth();
+    const { setNavBarType } = useNavBar();
 
     const [userId, setUserId] = useState("");
     const [password, setPassword] = useState("");
@@ -27,28 +29,30 @@ export const SignIn = () => {
 
             console.log("Signin: handleLogin 01", res);
 
-            // if (!res.user.isUserDeleted) {
-            console.log("Signin: handleLogin 02", res);
-            localStorage.setItem("authToken", res.token);
-            localStorage.setItem("userId", res.user._id);
-            localStorage.setItem("role", res.user.role);
+            if (!res.user.isUserDeleted) {
+                console.log("Signin: handleLogin 02", res);
+                localStorage.setItem("authToken", res.token);
+                localStorage.setItem("userId", res.user._id);
+                localStorage.setItem("role", res.user.role);
 
-            console.log("Signin: handleLogin 03", res);
+                console.log("Signin: handleLogin 03", res);
 
-            const res02 = await roleApi.getRoleById(res.user.role);
-            console.log("role", res02.roleId);
+                const res02 = await roleApi.getRoleById(res.user.role);
+                console.log("role", res02.roleId);
 
-            const role = res02.roleId;
+                const role = res02.roleId;
+                localStorage.setItem("roleName", role);
 
-            if (role === "owner" || "admin" || "manager" || "supervisor" || "accountant") {
-                setTimeout(() => navigate('/admin'), 0);
-            } else {
-                // barista, head barista, cashier, chef
-                navigate('/');
+                if (["owner", "admin", "manager", "supervisor", "accountant"].includes(role)) {
+                    setNavBarType("admin");
+                    navigate('/admin');
+                } else {
+                    // barista, head barista, cashier, chef
+                    setNavBarType("common");
+                    navigate('/');
+                }
             }
-            // }
 
-            navigate('/');
             console.log("Signin: handleLogin 04", res);
 
         } catch (error) {

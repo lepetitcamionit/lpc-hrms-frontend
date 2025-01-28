@@ -38,6 +38,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("authToken");
         localStorage.removeItem("userId");
         localStorage.removeItem("role");
+        localStorage.removeItem("roleName");
       } else {
         console.error("Logout failed", response.data.message);
       }
