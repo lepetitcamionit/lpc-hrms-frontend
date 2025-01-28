@@ -12,24 +12,107 @@ import { AdminLeavePage } from "./pages/leaves/AdminLeavePage";
 import { AdminNotificationPage } from "./pages/notifications/AdminNotificationPage";
 import { AdminRolePage } from "./pages/roles/AdminRolePage";
 import { SignIn } from "./pages/user/SignIn";
+import { UserProfile } from "./pages/user/UserProfile";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
     <Router>
       <CommonNavBar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/attendance" element={<AttendancePage />} />
-        <Route path="/leave" element={<LeavesPage />} />
-        <Route path="/payroll" element={<SalaryPage />} />
-        <Route path="/schedule" element={<ShiftSchedulePage />} />
-        <Route path="/training" element={<TrainingsPage />} />
-        <Route path="/admin" element={<AdminHomePage />} />
-        <Route path="/admin/leave" element={<AdminLeavePage />} />
-        <Route path="/admin/notification" element={<AdminNotificationPage />} />
-        <Route path="/admin/role" element={<AdminRolePage />} />
-        <Route path="/signin" element={<SignIn />} />
-      </Routes>
+          {/* Public Route */}
+          <Route path="/signin" element={<SignIn />} />
+
+          {/* Protected Routes */}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/attendance"
+            element={
+              <ProtectedRoute>
+                <AttendancePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/leave"
+            element={
+              <ProtectedRoute>
+                <LeavesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/payroll"
+            element={
+              <ProtectedRoute>
+                <SalaryPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/schedule"
+            element={
+              <ProtectedRoute>
+                <ShiftSchedulePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/training"
+            element={
+              <ProtectedRoute>
+                <TrainingsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminHomePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/leave"
+            element={
+              <ProtectedRoute>
+                <AdminLeavePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/notification"
+            element={
+              <ProtectedRoute>
+                <AdminNotificationPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/role"
+            element={
+              <ProtectedRoute>
+                <AdminRolePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/userProfile"
+            element={
+              <ProtectedRoute>
+                <UserProfile />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
     </Router>
   );
 }
