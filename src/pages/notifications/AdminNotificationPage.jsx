@@ -37,35 +37,11 @@ export const AdminNotificationPage = () => {
                     <Table.Body className="divide-y">
                         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
+                                -
                             </Table.Cell>
-                            <Table.Cell>Test</Table.Cell>
-                            <Table.Cell>Test Description Test DescriptionTest DescriptionTest DescriptionTest DescriptionTest DescriptionTest DescriptionTest DescriptionTest DescriptionTest Description</Table.Cell>
-                            <Table.Cell><div className="text-xl ml-2 cursor-pointer"><IoPencil /></div></Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>Test</Table.Cell>
-                            <Table.Cell>Test Description</Table.Cell>
-                            <Table.Cell><div className="text-xl ml-2 cursor-pointer"><IoPencil /></div></Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>Test</Table.Cell>
-                            <Table.Cell>Test Description</Table.Cell>
-                            <Table.Cell><div className="text-xl ml-2 cursor-pointer"><IoPencil /></div></Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>Test</Table.Cell>
-                            <Table.Cell>Test Description</Table.Cell>
-                            <Table.Cell><div className="text-xl ml-2 cursor-pointer"><IoPencil /></div></Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            {/* <Table.Cell><div className="text-xl ml-2 cursor-pointer"><IoPencil /></div></Table.Cell> */}
                         </Table.Row>
                     </Table.Body>
                 </Table>

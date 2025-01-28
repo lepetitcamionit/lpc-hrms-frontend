@@ -14,27 +14,9 @@ export const SalaryPage = () => {
                     <Table.Body className="divide-y">
                         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                Document - 25-01-2024 to 25-02-2024
+                                - 
                             </Table.Cell>
-                            <Table.Cell><div className="text-blue-600 cursor-pointer">Click Here</div></Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                Document - 25-01-2024 to 25-02-2024
-                            </Table.Cell>
-                            <Table.Cell><div className="text-blue-600 cursor-pointer">Click Here</div></Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                Document - 25-01-2024 to 25-02-2024
-                            </Table.Cell>
-                            <Table.Cell><div className="text-blue-600 cursor-pointer">Click Here</div></Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                Document - 25-01-2024 to 25-02-2024
-                            </Table.Cell>
-                            <Table.Cell><div className="text-blue-600 cursor-pointer">Click Here</div></Table.Cell>
+                            {/* <Table.Cell><div className="text-blue-600 cursor-pointer">Click Here</div></Table.Cell> */}
                         </Table.Row>
                     </Table.Body>
                 </Table>

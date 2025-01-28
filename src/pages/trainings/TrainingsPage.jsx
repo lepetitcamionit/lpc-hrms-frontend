@@ -18,33 +18,13 @@ export const TrainingsPage = () => {
                     <Table.Body className="divide-y">
                         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
+                                -
                             </Table.Cell>
-                            <Table.Cell>Ver</Table.Cell>
-                            <Table.Cell>Mashaf</Table.Cell>
-                            <Table.Cell>Barista Training</Table.Cell>
-                            <Table.Cell>08.00 AM</Table.Cell>
-                            <Table.Cell>11.00 AM</Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>Ver</Table.Cell>
-                            <Table.Cell>Mashaf</Table.Cell>
-                            <Table.Cell>Barista Training</Table.Cell>
-                            <Table.Cell>08.00 AM</Table.Cell>
-                            <Table.Cell>11.00 AM</Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>Ver</Table.Cell>
-                            <Table.Cell>Mashaf</Table.Cell>
-                            <Table.Cell>Barista Training</Table.Cell>
-                            <Table.Cell>08.00 AM</Table.Cell>
-                            <Table.Cell>11.00 AM</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>- </Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
                         </Table.Row>
                     </Table.Body>
                 </Table>

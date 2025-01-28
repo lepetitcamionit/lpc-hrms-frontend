@@ -16,27 +16,11 @@ export const ShiftSchedulePage = () => {
                     <Table.Body className="divide-y">
                         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
+                                -
                             </Table.Cell>
-                            <Table.Cell>Villagio</Table.Cell>
-                            <Table.Cell>08.00 AM</Table.Cell>
-                            <Table.Cell>04.00 PM</Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>Villagio</Table.Cell>
-                            <Table.Cell>08.00 AM</Table.Cell>
-                            <Table.Cell>04.00 PM</Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>Villagio</Table.Cell>
-                            <Table.Cell>08.00 AM</Table.Cell>
-                            <Table.Cell>04.00 PM</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
                         </Table.Row>
                     </Table.Body>
                 </Table>

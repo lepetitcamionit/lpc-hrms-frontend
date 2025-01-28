@@ -54,39 +54,12 @@ export const LeavesPage = () => {
                     <Table.Body className="divide-y">
                         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
+                                -
                             </Table.Cell>
-                            <Table.Cell>2024-02-02</Table.Cell>
-                            <Table.Cell>2024-02-04</Table.Cell>
-                            <Table.Cell>Casual</Table.Cell>
-                            <Table.Cell>Approved</Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>2024-02-02</Table.Cell>
-                            <Table.Cell>2024-02-04</Table.Cell>
-                            <Table.Cell>Casual</Table.Cell>
-                            <Table.Cell>Approved</Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>2024-02-02</Table.Cell>
-                            <Table.Cell>2024-02-04</Table.Cell>
-                            <Table.Cell>Casual</Table.Cell>
-                            <Table.Cell>Approved</Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>2024-02-02</Table.Cell>
-                            <Table.Cell>2024-02-04</Table.Cell>
-                            <Table.Cell>Casual</Table.Cell>
-                            <Table.Cell>Approved</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
                         </Table.Row>
                     </Table.Body>
                 </Table>

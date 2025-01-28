@@ -20,36 +20,14 @@ export const AdminLeavePage = () => {
                     <Table.Body className="divide-y">
                         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
+                                -
                             </Table.Cell>
-                            <Table.Cell>John Smith</Table.Cell>
-                            <Table.Cell>2024-02-10</Table.Cell>
-                            <Table.Cell>2024-02-12</Table.Cell>
-                            <Table.Cell>Casual</Table.Cell>
-                            <Table.Cell><p className="text-blue-600 cursor-pointer">Download</p></Table.Cell>
-                            <Table.Cell><div className="text-xl ml-2 cursor-pointer"><IoPencil /></div></Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>John Smith</Table.Cell>
-                            <Table.Cell>2024-02-10</Table.Cell>
-                            <Table.Cell>2024-02-12</Table.Cell>
-                            <Table.Cell>Casual</Table.Cell>
-                            <Table.Cell><p className="text-blue-600 cursor-pointer">Download</p></Table.Cell>
-                            <Table.Cell><div className="text-xl ml-2 cursor-pointer"><IoPencil /></div></Table.Cell>
-                        </Table.Row>
-                        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                2024-02-01
-                            </Table.Cell>
-                            <Table.Cell>John Smith</Table.Cell>
-                            <Table.Cell>2024-02-10</Table.Cell>
-                            <Table.Cell>2024-02-12</Table.Cell>
-                            <Table.Cell>Casual</Table.Cell>
-                            <Table.Cell><p className="text-blue-600 cursor-pointer">Download</p></Table.Cell>
-                            <Table.Cell><div className="text-xl ml-2 cursor-pointer"><IoPencil /></div></Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            <Table.Cell>-</Table.Cell>
+                            {/* <Table.Cell><p className="text-blue-600 cursor-pointer">-</p></Table.Cell> */}
+                            {/* <Table.Cell><div className="text-xl ml-2 cursor-pointer"><IoPencil /></div></Table.Cell> */}
                         </Table.Row>
                     </Table.Body>
                 </Table>
