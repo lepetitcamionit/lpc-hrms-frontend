@@ -21,6 +21,7 @@ import { SignIn } from "./pages/user/SignIn";
 import { UserProfile } from "./pages/user/UserProfile";
 import ProtectedRoute from "./ProtectedRoute";
 import { useNavBar } from "./NavBarContext";
+import { UnauthorizedPage } from "./pages/unauthorized/UnauthorizedPage";
 
 function App() {
   const { navBarType } = useNavBar();
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         {/* Public Route */}
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/unauthorized" element={<UnauthorizedPage />} />
 
         {/* Protected Routes */}
         <Route
@@ -82,38 +84,6 @@ function App() {
           }
         />
         <Route
-          path="/admin"
-          element={
-            <ProtectedRoute>
-              <AdminHomePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/leave"
-          element={
-            <ProtectedRoute>
-              <AdminLeavePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/notification"
-          element={
-            <ProtectedRoute>
-              <AdminNotificationPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/role"
-          element={
-            <ProtectedRoute>
-              <AdminRolePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
           path="/userProfile"
           element={
             <ProtectedRoute>
@@ -122,9 +92,41 @@ function App() {
           }
         />
         <Route
+          path="/admin"
+          element={
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
+              <AdminHomePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/leave"
+          element={
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
+              <AdminLeavePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/notification"
+          element={
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
+              <AdminNotificationPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/role"
+          element={
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
+              <AdminRolePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/admin/attendance"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
               <AdminAttendancePage />
             </ProtectedRoute>
           }
@@ -132,7 +134,7 @@ function App() {
         <Route
           path="/admin/payroll"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
               <AdminPayrollPage />
             </ProtectedRoute>
           }
@@ -140,7 +142,7 @@ function App() {
         <Route
           path="/admin/shifts"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
               <AdminShiftsPage />
             </ProtectedRoute>
           }
@@ -148,7 +150,7 @@ function App() {
         <Route
           path="/admin/shiftschedules"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
               <AdminShiftSchedulesPage />
             </ProtectedRoute>
           }
@@ -156,7 +158,7 @@ function App() {
         <Route
           path="/admin/training"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
               <AdminTrainingsPage />
             </ProtectedRoute>
           }
@@ -164,7 +166,7 @@ function App() {
         <Route
           path="/admin/recruitment"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
               <RecruitmentPage />
             </ProtectedRoute>
           }
