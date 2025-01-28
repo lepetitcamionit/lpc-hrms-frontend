@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Label, TextInput } from "flowbite-react";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../../AuthProvider";
@@ -21,30 +21,31 @@ export const SignIn = () => {
 
         try {
             const res = await login(credentials);
-            
+
             console.log(userId);
             console.log(password);
 
             console.log("Signin: handleLogin 01", res);
 
             // if (!res.user.isUserDeleted) {
-                console.log("Signin: handleLogin 02", res);
-                localStorage.setItem("authToken", res.token);
-                localStorage.setItem("userId", res.user._id);
-                localStorage.setItem("role", res.user.role);
+            console.log("Signin: handleLogin 02", res);
+            localStorage.setItem("authToken", res.token);
+            localStorage.setItem("userId", res.user._id);
+            localStorage.setItem("role", res.user.role);
 
-                console.log("Signin: handleLogin 03", res);
+            console.log("Signin: handleLogin 03", res);
 
-                const res02 = await roleApi.getRoleById(res.user.role, res.token);
-                console.log("role", res02.roleId);
+            const res02 = await roleApi.getRoleById(res.user.role);
+            console.log("role", res02.roleId);
 
-                const role = res02.roleId;
+            const role = res02.roleId;
 
-                if (role == "owner") {
-                    navigate('/admin');
-                }else {
-                    navigate('/');
-                }
+            if (role === "owner" || "admin" || "manager" || "supervisor" || "accountant") {
+                setTimeout(() => navigate('/admin'), 0);
+            } else {
+                // barista, head barista, cashier, chef
+                navigate('/');
+            }
             // }
 
             navigate('/');

@@ -34,19 +34,13 @@ const getAllAttendance = async () => {
   }
 };
 
-const createAttendance = async (attendanceData, token) => {
+const createAttendance = async (attendanceData) => {
   console.log("createAttendance 01");
   console.log(attendanceData);
 
   try {
     console.log("createAttendance 02");
-    const response = await apiInstance.post(`/attendance`, attendanceData, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      withCredentials: true,
-    });
-
+    const response = await apiInstance.post(`/attendance`, attendanceData);
     console.log("createAttendance 03");
     console.log(response);
 

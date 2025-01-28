@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "flowbite-react";
-import * as XLSX from "xlsx"; // Import xlsx library
-import attendanceApi from "../../api/attendance.request"; // Assuming you have an API to fetch attendance data
-
+import * as XLSX from "xlsx";
+import attendanceApi from "../../api/attendance.request";
 export const AdminHomePage = () => {
     const [attendanceData, setAttendanceData] = useState([]);
 

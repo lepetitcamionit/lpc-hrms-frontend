@@ -1,33 +1,10 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 import apiInstance from "./api/apiInstance";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const fetchAuthState = async () => {
-//       try {
-//         console.log("AuthProvider: fetchAuthState 01");
-//         console.log("AuthProvider: fetchAuthState 02", auth);
-//         const response = await apiInstance.get("/user/auth/session", {
-//           withCredentials: true,
-//         });
-//         console.log("AuthProvider: fetchAuthState 03", response);
-//         if (response.data) {
-//           setAuth(response.data);
-//         }
-//       } catch (error) {
-//         console.error("Failed to validate session:", error);
-//         setAuth(null);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-//     fetchAuthState();
-//   }, []);
 
   const signUp = async (user) => {
     try {

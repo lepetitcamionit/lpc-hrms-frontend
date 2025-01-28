@@ -1,17 +1,8 @@
 import apiInstance from "./apiInstance";
 
 const getUserById = async (id) => {
-  // if (!token) {
-  //   throw new Error("User is not authenticated. Please log in.");
-  // }
-
   try {
-    const response = await apiInstance.get(`/user/${id}`, {
-      // headers: {
-      //   Authorization: `Bearer ${token}`,
-      // },
-      // withCredentials: true,
-    });
+    const response = await apiInstance.get(`/user/${id}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching user data:", error);
@@ -21,13 +12,7 @@ const getUserById = async (id) => {
 
 const getAllUsers = async () => {
   try {
-    const token = localStorage.getItem("authToken");
-    if (token) {
-      document.cookie = `token=${token}; path=/`;
-    }
-    const response = await apiInstance.get(`/user/admin`, {
-      withCredentials: true,
-    });
+    const response = await apiInstance.get(`/user/admin`);
     return response.data;
   } catch (error) {
     console.error("Error fetching user data:", error);
@@ -35,19 +20,9 @@ const getAllUsers = async () => {
   }
 };
 
-const updateUser = async (userData, userid, token) => {
-  if (!token) {
-    throw new Error("User is not authenticated. Please log in.");
-  }
-
+const updateUser = async (userData, userid) => {
   try {
-    const response = await apiInstance.patch(`/user/${userid}`, userData, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      withCredentials: true,
-    });
-
+    const response = await apiInstance.patch(`/user/${userid}`, userData);
     return response.data;
   } catch (error) {
     console.error("Error updating user data:", error);
@@ -55,22 +30,9 @@ const updateUser = async (userData, userid, token) => {
   }
 };
 
-// const softDeleteUser = async (userid, token) => {
-//   if (!token) {
-//     throw new Error("User is not authenticated. Please log in.");
-//   }
-
+// const softDeleteUser = async (userid) => {
 //   try {
-//     const response = await apiInstance.patch(`/user/soft-delete/${userid}`, {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//       withCredentials: true,
-//     });
-
-//     localStorage.removeItem("authToken");
-//     localStorage.removeItem("userId");
-
+//     const response = await apiInstance.patch(`/user/soft-delete/${userid}`);
 //     return response.data;
 //   } catch (error) {
 //     console.error("Error updating user data:", error);
