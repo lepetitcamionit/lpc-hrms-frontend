@@ -22,6 +22,7 @@ import { UserProfile } from "./pages/user/UserProfile";
 import ProtectedRoute from "./ProtectedRoute";
 import { useNavBar } from "./NavBarContext";
 import { UnauthorizedPage } from "./pages/unauthorized/UnauthorizedPage";
+import { EmployeeManagement } from "./pages/user/EmployeeManagement";
 
 function App() {
   const { navBarType } = useNavBar();
@@ -96,6 +97,14 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={["admin", "owner"]}>
               <AdminHomePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/employee"
+          element={
+            <ProtectedRoute allowedRoles={["admin", "owner"]}>
+              <EmployeeManagement />
             </ProtectedRoute>
           }
         />

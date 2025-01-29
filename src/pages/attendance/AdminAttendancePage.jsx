@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "flowbite-react";
+import { Button, TextInput } from "flowbite-react";
 import * as XLSX from "xlsx";
 import attendanceApi from "../../api/attendance.request";
 import { Table } from "flowbite-react";
@@ -7,6 +7,7 @@ import { Table } from "flowbite-react";
 export const AdminAttendancePage = () => {
     const [attendanceData, setAttendanceData] = useState([]);
     const [uniqueEmployees, setUniqueEmployees] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         const fetchAttendanceData = async () => {
@@ -90,6 +91,10 @@ export const AdminAttendancePage = () => {
         return "No OT";
     };
 
+    const filteredEmployees = uniqueEmployees.filter((employeeName) =>
+        employeeName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <div>
             <p className="mt-12 mt-5 text-md font-bold ml-10">Attendance Reports</p>
@@ -100,13 +105,14 @@ export const AdminAttendancePage = () => {
             </div>
 
             <div className="mx-8 sm:mx-48 mt-12">
+                <TextInput type="text" placeholder="Search Here..." className="w-[200px] mb-6" onChange={(e) => setSearchTerm(e.target.value)} />
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>Staff Name</Table.HeadCell>
                         <Table.HeadCell>Individual Report</Table.HeadCell>
                     </Table.Head>
                     <Table.Body className="divide-y">
-                        {uniqueEmployees.map((employeeName) => (
+                        {filteredEmployees.map((employeeName) => (
                             <Table.Row
                                 key={employeeName}
                                 className="bg-white dark:border-gray-700 dark:bg-gray-800"

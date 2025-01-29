@@ -20,6 +20,11 @@ function AdminNavBar() {
     handleClose();
   }
 
+  const goToEmployees = () => {
+    navigate('/admin/employee');
+    handleClose();
+  }
+
   const goToAttendance = () => {
     navigate('/admin/attendance');
     handleClose();
@@ -89,6 +94,9 @@ function AdminNavBar() {
                   <div className="text-[16px] ml-6">
                     <div className="flex items-center mb-0 mt-0 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goHome}>
                       Home
+                    </div>
+                    <div className="flex items-center my-4  mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToEmployees}>
+                      Employees
                     </div>
                     <div className="flex items-center my-4  mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToAttendance}>
                       Attendance
