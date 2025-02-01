@@ -1,9 +1,9 @@
 import React from "react";
 
-export const AdminHomePage = () => {
+export const UnauthorizedPage = () => {
     return (
         <div>
-            Admin Home
+            UnauthorizedPage
         </div>
     );
-};
+}

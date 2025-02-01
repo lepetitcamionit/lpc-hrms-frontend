@@ -20,6 +20,16 @@ function AdminNavBar() {
     handleClose();
   }
 
+  const goToEmployees = () => {
+    navigate('/admin/employee');
+    handleClose();
+  }
+
+  const goToAttendance = () => {
+    navigate('/admin/attendance');
+    handleClose();
+  }
+
   const goToLeaves = () => {
     navigate('/admin/leave');
     handleClose();
@@ -30,8 +40,28 @@ function AdminNavBar() {
     handleClose();
   }
 
-  const goToRoles = () => {
-    navigate('/admin/role');
+  const goToPayroll = () => {
+    navigate('/admin/payroll');
+    handleClose();
+  }
+
+  const goToShifts = () => {
+    navigate('/admin/shifts');
+    handleClose();
+  }
+
+  const goToShiftSchedules = () => {
+    navigate('/admin/shiftschedules');
+    handleClose();
+  }
+
+  const goToTrainings = () => {
+    navigate('/admin/training');
+    handleClose();
+  }
+
+  const goToRecruitment = () => {
+    navigate('/admin/recruitment');
     handleClose();
   }
 
@@ -60,7 +90,10 @@ function AdminNavBar() {
                     <div className="flex items-center mb-0 mt-0 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goHome}>
                       Home
                     </div>
-                    <div className="flex items-center my-4  mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" >
+                    <div className="flex items-center my-4  mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToEmployees}>
+                      Employees
+                    </div>
+                    <div className="flex items-center my-4  mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToAttendance}>
                       Attendance
                     </div>
                     <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition hover:bg-[#21708B] text-white" onClick={goToLeaves}>
@@ -69,22 +102,19 @@ function AdminNavBar() {
                     <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToNotifications}>
                       Notifications
                     </div>
-                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" >
+                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToPayroll}>
                       Payroll
                     </div>
-                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToRoles}>
-                      Roles
-                    </div>
-                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white">
+                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToShifts}>
                       Shifts
                     </div>
-                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white">
+                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToShiftSchedules}>
                       Shift Schedules
                     </div>
-                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white">
+                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToTrainings}>
                       Trainings
                     </div>
-                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white">
+                    <div className="flex items-center my-4 mr-10 cursor-pointer rounded-md px-4 py-1 transition duration-300 cursor-pointer hover:bg-[#21708B] text-white" onClick={goToRecruitment}>
                       Recruitment
                     </div>
                   </div>
@@ -106,7 +136,7 @@ function AdminNavBar() {
           <Tooltip content="Menu" placement="bottom" className="text-xs">
             <IoMenu className="mr-3 ml-3 h-6 w-6 text-white" style={{ cursor: "pointer" }} onClick={() => setIsOpen(true)} />
           </Tooltip>
-          <img src="/assets/logo2.png" className="mr-3 ml-5 h-5 sm:h-5" alt="Le Petit Camion Logo" />
+          <img src="/assets/logo_white.png" className="mr-3 ml-5 h-5 sm:h-6 cursor-pointer" alt="Le Petit Camion Logo" onClick={goHome}/>
         </Navbar.Brand>
         <div className="flex md:order-3" style={{ marginTop: "10px", marginBottom: "10px", marginLeft: "14px" }}>
           <Tooltip content="Notifications" placement="bottom" className="text-xs">
