@@ -1,9 +1,9 @@
 import React from "react";
 
-export const AdminHomePage = () => {
+export const AdminShiftsPage = () => {
     return (
         <div>
-            Admin Home
+            AdminShiftsPage
         </div>
     );
-};
+}

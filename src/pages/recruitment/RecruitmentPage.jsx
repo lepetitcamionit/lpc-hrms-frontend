@@ -1,9 +1,9 @@
 import React from "react";
 
-export const AdminHomePage = () => {
+export const RecruitmentPage = () => {
     return (
         <div>
-            Admin Home
+            RecruitmentPage
         </div>
     );
-};
+}

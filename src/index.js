@@ -6,15 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 import { store } from "./store";
 import { Provider } from "react-redux";
 import { AuthProvider } from "./AuthProvider";
+import { NavBarProvider } from "./NavBarContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </AuthProvider>
+    <NavBarProvider>
+      <AuthProvider>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </AuthProvider>
+    </NavBarProvider>
   </React.StrictMode>
 );
 

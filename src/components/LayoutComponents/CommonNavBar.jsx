@@ -104,7 +104,7 @@ function CommonNavBar() {
           <Tooltip content="Menu" placement="bottom" className="text-xs">
             <IoMenu className="mr-3 ml-3 h-6 w-6 text-white" style={{ cursor: "pointer" }} onClick={() => setIsOpen(true)} />
           </Tooltip>
-          <img src="/assets/logo2.png" className="mr-3 ml-5 h-5 sm:h-5" alt="Le Petit Camion Logo" />
+          <img src="/assets/logo_white.png" className="mr-3 ml-5 h-5 sm:h-6 cursor-pointer" alt="Le Petit Camion Logo" onClick={goHome}/>
         </Navbar.Brand>
         <div className="flex md:order-3" style={{ marginTop: "10px", marginBottom: "10px", marginLeft: "14px" }}>
           <Tooltip content="Notifications" placement="bottom" className="text-xs">
