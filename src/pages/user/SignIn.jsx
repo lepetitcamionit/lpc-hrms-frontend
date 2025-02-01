@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Label, TextInput } from "flowbite-react";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../../AuthProvider";
-import roleApi from "../../api/role.request";
 import { useNavBar } from "../../NavBarContext";
 
 export const SignIn = () => {
@@ -37,13 +36,9 @@ export const SignIn = () => {
 
                 console.log("Signin: handleLogin 03", res);
 
-                const res02 = await roleApi.getRoleById(res.user.role);
-                console.log("role", res02.roleId);
+                const role = res.user.role;
 
-                const role = res02.roleId;
-                localStorage.setItem("roleName", role);
-
-                if (["owner", "admin", "manager", "supervisor", "accountant"].includes(role)) {
+                if (["owner", "admin", "manager", "supervisor", "accountant", "HR"].includes(role)) {
                     setNavBarType("admin");
                     navigate('/admin');
                 } else {

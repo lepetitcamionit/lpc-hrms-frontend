@@ -6,7 +6,7 @@ export const NavBarProvider = ({ children }) => {
   const [navBarType, setNavBarType] = useState("common");
 
   useEffect(() => {
-    const role = localStorage.getItem("roleName");
+    const role = localStorage.getItem("role");
     if (
       ["owner", "admin", "manager", "supervisor", "accountant"].includes(role)
     ) {

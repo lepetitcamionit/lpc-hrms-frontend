@@ -3,19 +3,26 @@ import { Table, Modal } from "flowbite-react";
 import { Button, TextInput } from "flowbite-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
 import userApi from "../../api/user.request";
+import { CreateEmployee } from "./CreateEmployee";
+import { UpdateEmployee } from "./UpdateEmployee";
 
 export const EmployeeManagement = () => {
     const [users, setUsers] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedUser, setSelectedUser] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+    const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
+    const [userToUpdate, setUserToUpdate] = useState(null);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [userToDelete, setUserToDelete] = useState(null);
 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
                 const allUsers = await userApi.getAllUsers();
                 setUsers(allUsers);
-                console.log(allUsers); // Verify that roles are populated
+                console.log(allUsers);
             } catch (error) {
                 console.error("Error fetching users:", error);
             }
@@ -32,10 +39,51 @@ export const EmployeeManagement = () => {
         try {
             const user = await userApi.getUserById(userId);
             setSelectedUser(user);
-            console.log(user); // Verify that roles are populated
+
+            console.log("handleViewUser");
+
             setIsModalOpen(true);
         } catch (error) {
             console.error("Error fetching user details:", error);
+        }
+    };
+
+    const handleOpenCreateModal = () => {
+        setIsCreateModalOpen(true);
+    }
+
+    const handleCloseCreateModal = () => {
+        setIsCreateModalOpen(false);
+    }
+
+    const handleOpenUpdateModal = (user) => {
+        setUserToUpdate(user);
+        setIsUpdateModalOpen(true);
+    };
+
+    const handleCloseUpdateModal = () => {
+        setIsUpdateModalOpen(false);
+    };
+
+    const handleOpenDeleteModal = (user) => {
+        setUserToDelete(user);
+        setIsDeleteModalOpen(true);
+    };
+
+    const handleCloseDeleteModal = () => {
+        setIsDeleteModalOpen(false);
+        setUserToDelete(null);
+    };
+
+    const handleDeleteUser = async () => {
+        if (!userToDelete) return;
+
+        try {
+            await userApi.softDeleteUser(userToDelete._id);
+            setUsers(users.filter(user => user._id !== userToDelete._id));
+            handleCloseDeleteModal();
+        } catch (error) {
+            console.error("Error deleting user:", error);
         }
     };
 
@@ -50,12 +98,11 @@ export const EmployeeManagement = () => {
                         className="w-[200px]"
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                    <Button type="submit">Create Employee</Button>
+                    <Button type="submit" onClick={handleOpenCreateModal}>Create Employee</Button>
                 </div>
                 <Table hoverable>
                     <Table.Head>
                         <Table.HeadCell>Name</Table.HeadCell>
-                        <Table.HeadCell>Role</Table.HeadCell>
                         <Table.HeadCell>Details</Table.HeadCell>
                         <Table.HeadCell>Update</Table.HeadCell>
                         <Table.HeadCell>Soft Delete</Table.HeadCell>
@@ -69,9 +116,6 @@ export const EmployeeManagement = () => {
                                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                     {user.name}
                                 </Table.Cell>
-                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                    {user.role?.roleId || "N/A"} {/* Display roleId */}
-                                </Table.Cell>
                                 <Table.Cell
                                     className="text-blue-600 cursor-pointer"
                                     onClick={() => handleViewUser(user._id)}
@@ -79,12 +123,12 @@ export const EmployeeManagement = () => {
                                     View
                                 </Table.Cell>
                                 <Table.Cell>
-                                    <div className="text-xl ml-2 cursor-pointer">
+                                    <div className="text-xl ml-2 cursor-pointer" onClick={() => handleOpenUpdateModal(user)}>
                                         <IoPencil />
                                     </div>
                                 </Table.Cell>
                                 <Table.Cell>
-                                    <div className="text-xl ml-2 cursor-pointer text-red-500">
+                                    <div className="text-xl ml-2 cursor-pointer text-red-500" onClick={() => handleOpenDeleteModal(user)}>
                                         <IoTrash />
                                     </div>
                                 </Table.Cell>
@@ -102,6 +146,7 @@ export const EmployeeManagement = () => {
                         <div className="space-y-4 ml-6">
                             <p><strong className="mr-2">Name:</strong> {selectedUser.name}</p>
                             <p><strong className="mr-2">User Id:</strong> {selectedUser.userId}</p>
+                            <p><strong className="mr-2">Role:</strong> {selectedUser.role}</p>
                             <p><strong className="mr-2">Salary:</strong> {selectedUser.salary} QR</p>
                             <p><strong className="mr-2">Passport Number:</strong> {selectedUser.passportNumber}</p>
                             <p><strong className="mr-2">QID Number:</strong> {selectedUser.qidNumber}</p>
@@ -119,6 +164,86 @@ export const EmployeeManagement = () => {
                     </Modal.Body>
                 </Modal>
             )}
+
+            {isCreateModalOpen && (
+                <>
+                    {/* Backdrop */}
+                    <div
+                        style={{
+                            position: "fixed",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            backgroundColor: "rgba(0, 0, 0, 0.5)",  // Dark background
+                            zIndex: 9998,  // Set z-index lower than modal
+                        }}
+                        onClick={handleCloseCreateModal}  // Close modal when clicking backdrop
+                    ></div>
+
+                    {/* Modal */}
+                    <CreateEmployee
+                        onClose={handleCloseCreateModal}
+                        modalStyle={{
+                            position: "fixed",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            zIndex: 9999,  // Set z-index higher than backdrop
+                            width: "100%", // Adjust width if needed
+                            maxWidth: "500px",
+                            height: "80%",
+                            maxHeight: "90vh",
+                            overflowY: "auto",
+                            backgroundColor: "white",
+                            borderRadius: "8px", // Optional for better look
+                        }}
+                    />
+                </>
+            )}
+
+            {isUpdateModalOpen && (
+                <>
+                    <div
+                        style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.5)", zIndex: 9998 }}
+                        onClick={handleCloseUpdateModal}
+                    ></div>
+
+                    <UpdateEmployee
+                        user={userToUpdate}
+                        onClose={handleCloseUpdateModal}
+                        modalStyle={{
+                            position: "fixed",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            zIndex: 9999,
+                            width: "100%",
+                            maxWidth: "500px",
+                            height: "80%",
+                            maxHeight: "90vh",
+                            overflowY: "auto",
+                            backgroundColor: "white",
+                            borderRadius: "8px",
+                        }}
+                    />
+                </>
+            )}
+
+            {/* Delete Confirmation Modal */}
+            {isDeleteModalOpen && (
+                <Modal show={isDeleteModalOpen} onClose={handleCloseDeleteModal}>
+                    <Modal.Header>Delete Employee</Modal.Header>
+                    <Modal.Body>
+                        <p>Are you sure you want to delete <strong>{userToDelete?.name}</strong>?</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button color="red" onClick={handleDeleteUser}>Yes, Delete</Button>
+                        <Button color="gray" onClick={handleCloseDeleteModal}>Cancel</Button>
+                    </Modal.Footer>
+                </Modal>
+            )}
+
         </div>
     );
 };

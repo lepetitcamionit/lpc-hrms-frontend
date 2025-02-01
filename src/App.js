@@ -12,7 +12,6 @@ import { AdminAttendancePage } from "./pages/attendance/AdminAttendancePage";
 import { AdminLeavePage } from "./pages/leaves/AdminLeavePage";
 import { AdminNotificationPage } from "./pages/notifications/AdminNotificationPage";
 import { AdminPayrollPage } from "./pages/salary/AdminPayrollPage";
-import { AdminRolePage } from "./pages/roles/AdminRolePage";
 import { AdminShiftsPage } from "./pages/shiftSchedule/AdminShiftsPage";
 import { AdminShiftSchedulesPage } from "./pages/shiftSchedule/AdminShiftSchedulesPage";
 import { AdminTrainingsPage } from "./pages/trainings/AdminTrainingsPage";
@@ -121,14 +120,6 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={["admin", "owner"]}>
               <AdminNotificationPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin/role"
-          element={
-            <ProtectedRoute allowedRoles={["admin", "owner"]}>
-              <AdminRolePage />
             </ProtectedRoute>
           }
         />
