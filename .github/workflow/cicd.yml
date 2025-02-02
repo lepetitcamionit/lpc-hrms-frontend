@@ -1,0 +1,30 @@
+name: CICD
+
+on:
+  push:
+    branches:
+      - deploy-to-ec2
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        users: actions/checkout@v3
+      - name: Login to Docker Hub
+        users: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build Docker Image
+        users: docker build -t lepetitcamion/lpc-hrms-frontend:${{ github.sha }} .
+      - name: Publish Image to Dockerhub
+        users: docker push lepetitcamion/lpc-hrms-frontend:${{ github.sha }}
+
+  deploy:
+    needs: build
+    runs-on: aws-ec2
+    steps:
+      - name: Pull image from docker hub
+        run: docker pull lepetitcamion/lpc-hrms-frontend:${{ github.sha }}
+      - name: Delete Old Container
+        run: docker rm -f reactContainer
+      - name: Run the docker container
+        run: docker run -d -p 3000:80 --name reactContainer lepetitcamion/lpc-hrms-frontend
